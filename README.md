@@ -6,6 +6,13 @@ The interface has been tested with the following 32K SRAM chips, all running Bea
 - HM62256BLP-10
 - AS6C62256-55PCN
 
+## version 1.2 - minor modification
+It turns out that v1.1 does not work together with the zx81-external-eprom interface, due to issues with the ROMCS line that can be fixed with a diode on the ROMCS line. The schema has been updated with this fix, but if you already have a v1.1 PCB it's easy to do the fix.
+
+- Cut the ROMCS trace on the back - and put in a diode, eg. 1N4148 instead - as shown here:
+
+<img width="944" height="2046" alt="image" src="https://github.com/user-attachments/assets/3006bb30-dfa5-45d1-98b8-9185b394c346" />
+
 ## version 1.1 - full 32K support, with data in the 32-48K area.
 Most version for internal 32K RAM puts the extra 16K at the top, 48 to 64K - but this is not what most 32K program expects. The 32K programs I have found expect the 32K from 16K, which requires some extra logic - another issue with this configuration is that normaly the ROM is mirrored between 32 and 48K, which means the ROM has to be disabled when the ZX81 access this part of the memory. I also decided to change the diodes from 1N4148 to BAT85 as suggested in general for this type of usage.
 
