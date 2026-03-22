@@ -1,30 +1,10 @@
 # zx81-external-ram module 16K/32K
-Simple and compact external RAM interface for the ZX81 with WRX compability. First version is a 16K module and can be used on ZX80 and Lambda 8300 or simlar as well. The interface is made using THT components, making it easy for everyone to make. The interface for now is only using 16K from the 62256 memory chip, using the other half 16K might be added on later version. I might also consider making a SMD version, making it even smaller in size :-)
+Simple and compact external RAM interface for the ZX81 with WRX compability. First version is a 16K module and can be used on ZX80 and Lambda 8300 or simlar as well. The interface is made using THT components, making it easy for everyone to make.
 
-| SCHEMA | PCB |
-| ------ | --- |
-|<img width="500" src="https://github.com/thomasheckmann/zx81-external-16k/assets/14136378/13aac0e5-a740-411d-8db7-992cb222da2b">|<img width="500" src="https://github.com/thomasheckmann/zx81-external-16k/assets/14136378/c1618e65-fe65-4309-99b0-8c6cdfef9aad">|
-
-## version 1.0
-The PCB arrived, so I populated it with some components (all written on the silkscreen).
-
-![image](https://github.com/thomasheckmann/zx81-external-16k/assets/14136378/9aa3a963-2a5f-4a25-a5a8-68c8066c61e9)
-
-BOM for v1.0 (16K only)
-- LED 3mm
-- Resistor 470 Ohm
-- Resistor 4K7 Ohm
-- 2 x Ceramic capacitor 100nF, P2,54
-- 2 x Diode 1N4148
-- 74LS00
-- RAM 62256 or similar
-- ZX81 Edge Connector or my [ZX81 Bus Extender](https://github.com/thomasheckmann/zx81-bus-extender)
-  
-NOTE: WRX hi-res, to get full support for hi-res WRX a cercamic capacitor is needed between PIN 20 (CS) and GND. In this build with a KM62256ALP-10 a 1,2nF ceramic capacitor should be fitted. 
-
-The value for the capacitor for different 62256 SRAM chips tested with [STARFIGHT](https://problemkaputt.de/starfigh.htm)
-
-- KM62256ALP-10, 1.2nF
+The interface has been tested with the following 32K SRAM chips, all running Beamrider perfectly.
+- UM62256E-70LL
+- HM62256BLP-10
+- AS6C62256-55PCN
 
 ## version 1.1 - full 32K support, with data in the 32-48K area.
 Most version for internal 32K RAM puts the extra 16K at the top, 48 to 64K - but this is not what most 32K program expects. The 32K programs I have found expect the 32K from 16K, which requires some extra logic - another issue with this configuration is that normaly the ROM is mirrored between 32 and 48K, which means the ROM has to be disabled when the ZX81 access this part of the memory. I also decided to change the diodes from 1N4148 to BAT85 as suggested in general for this type of usage.
@@ -61,10 +41,32 @@ BOM for v1.1 (32K, continously from adress 16384)
 - RAM 62256 or similar
 - ZX81 Edge Connector or my [ZX81 Bus Extender](https://github.com/thomasheckmann/zx81-bus-extender)
 
-The interface has been tested with the following 32K SRAM chips, all running Beamrider perfectly.
-- UM62256E-70LL
-- HM62256BLP-10
-- AS6C62256-55PCN
+## version 1.0 - 16K with WRX support
+The interface for now is only using 16K from the 62256 memory chip, using the other half 16K might be added on later version. I might also consider making a SMD version, making it even smaller in size :-)
+
+| SCHEMA | PCB |
+| ------ | --- |
+|<img width="500" src="https://github.com/thomasheckmann/zx81-external-16k/assets/14136378/13aac0e5-a740-411d-8db7-992cb222da2b">|<img width="500" src="https://github.com/thomasheckmann/zx81-external-16k/assets/14136378/c1618e65-fe65-4309-99b0-8c6cdfef9aad">|
+
+The PCB arrived, so I populated it with some components (all written on the silkscreen).
+
+![image](https://github.com/thomasheckmann/zx81-external-16k/assets/14136378/9aa3a963-2a5f-4a25-a5a8-68c8066c61e9)
+
+BOM for v1.0 (16K only)
+- LED 3mm
+- Resistor 470 Ohm
+- Resistor 4K7 Ohm
+- 2 x Ceramic capacitor 100nF, P2,54
+- 2 x Diode 1N4148
+- 74LS00
+- RAM 62256 or similar
+- ZX81 Edge Connector or my [ZX81 Bus Extender](https://github.com/thomasheckmann/zx81-bus-extender)
+  
+NOTE: WRX hi-res, to get full support for hi-res WRX a cercamic capacitor is needed between PIN 20 (CS) and GND. In this build with a KM62256ALP-10 a 1,2nF ceramic capacitor should be fitted. 
+
+The value for the capacitor for different 62256 SRAM chips tested with [STARFIGHT](https://problemkaputt.de/starfigh.htm)
+
+- KM62256ALP-10, 1.2nF
 
 ### Test using SYSINFO.P v0.02
 This test program examines the memory configuration and reports this, 32K ram starting from address 0x4000 :-)
