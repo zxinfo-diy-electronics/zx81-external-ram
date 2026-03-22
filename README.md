@@ -17,6 +17,10 @@ And now it runs fine with the zx81-external-eprom interface as well.
 
 <img width="1080" alt="image" src="https://github.com/user-attachments/assets/e485ae72-63f8-45f1-9964-02381988574d" />
 
+BOM for v1.2 (ROMCS fix)
+- same as v1.1
+- Diode 1N4144 (or similar)
+
 ## version 1.1 - full 32K support, with data in the 32-48K area.
 Most version for internal 32K RAM puts the extra 16K at the top, 48 to 64K - but this is not what most 32K program expects. The 32K programs I have found expect the 32K from 16K, which requires some extra logic - another issue with this configuration is that normaly the ROM is mirrored between 32 and 48K, which means the ROM has to be disabled when the ZX81 access this part of the memory. I also decided to change the diodes from 1N4148 to BAT85 as suggested in general for this type of usage.
 
