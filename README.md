@@ -13,6 +13,10 @@ It turns out that v1.1 does not work together with the zx81-external-eprom inter
 
 <img width="944" height="2046" alt="image" src="https://github.com/user-attachments/assets/3006bb30-dfa5-45d1-98b8-9185b394c346" />
 
+And now it runs fine with the zx81-external-eprom interface as well.
+
+<img width="1080" alt="image" src="https://github.com/user-attachments/assets/e485ae72-63f8-45f1-9964-02381988574d" />
+
 ## version 1.1 - full 32K support, with data in the 32-48K area.
 Most version for internal 32K RAM puts the extra 16K at the top, 48 to 64K - but this is not what most 32K program expects. The 32K programs I have found expect the 32K from 16K, which requires some extra logic - another issue with this configuration is that normaly the ROM is mirrored between 32 and 48K, which means the ROM has to be disabled when the ZX81 access this part of the memory. I also decided to change the diodes from 1N4148 to BAT85 as suggested in general for this type of usage.
 
@@ -21,7 +25,12 @@ A little prototyping based on the v1.0 board - and yes, 32K from adress 16384 is
 | ------ | ------ |
 |<img width="500" src="https://github.com/thomasheckmann/zx81-external-16k/assets/14136378/63b1f332-3907-4595-98db-b0b84c26ef5d">|<img width="500" src="https://github.com/thomasheckmann/zx81-external-16k/assets/14136378/3de21f3b-935e-4c53-96fe-5fa362c691e3">|
 
-Programs tested with success so far:
+### Test using SYSINFO.P v0.02
+This test program examines the memory configuration and reports this, 32K ram starting from address 0x4000 :-)
+
+![image](https://github.com/user-attachments/assets/fadee3b9-d033-4347-9d10-96aed8183f11)
+
+### Programs tested with success so far:
 - [Beamrider](https://problemkaputt.de/beamride.htm), 32K and WRX graphics 
 - [MaxDemo](https://demozoo.org/productions/159644/), 32K and WRX graphics (impressive 320x240 resolution)
 - [Cross Snake](https://github.com/Fabrizio-Caruso/CROSS-LIB/releases/tag/XSnake2.0), 32K and WRX
@@ -74,8 +83,3 @@ NOTE: WRX hi-res, to get full support for hi-res WRX a cercamic capacitor is nee
 The value for the capacitor for different 62256 SRAM chips tested with [STARFIGHT](https://problemkaputt.de/starfigh.htm)
 
 - KM62256ALP-10, 1.2nF
-
-### Test using SYSINFO.P v0.02
-This test program examines the memory configuration and reports this, 32K ram starting from address 0x4000 :-)
-
-![image](https://github.com/user-attachments/assets/fadee3b9-d033-4347-9d10-96aed8183f11)
