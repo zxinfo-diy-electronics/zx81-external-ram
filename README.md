@@ -6,6 +6,10 @@ The interface has been tested with the following 32K SRAM chips, all running Bea
 - HM62256BLP-10
 - AS6C62256-55PCN
 
+| <!---> | <!---> |
+| ------ | ------ |
+|<img width="500" src="https://github.com/thomasheckmann/zx81-external-16k/assets/14136378/cc751cdf-ddca-4291-aa99-5541b012a066">|<img width="500" src="https://github.com/thomasheckmann/zx81-external-16k/assets/14136378/36ffc1d7-7bf1-4760-bd7d-c64a76275ac7">|
+
 ## version 1.2 - minor modification
 It turns out that v1.1 does not work together with the zx81-external-eprom interface, due to issues with the ROMCS line that can be fixed with a diode on the ROMCS line. The schema has been updated with this fix, but if you already have a v1.1 PCB it's easy to do the fix.
 
@@ -43,10 +47,6 @@ This test program examines the memory configuration and reports this, 32K ram st
 
 32K Programs NOT working - as they require internal modification in order to run M/C above 32K area.
 - [The Crystal Frog](https://www.sinclairzxworld.com/viewtopic.php?t=334)
-
-| <!---> | <!---> |
-| ------ | ------ |
-|<img width="500" src="https://github.com/thomasheckmann/zx81-external-16k/assets/14136378/cc751cdf-ddca-4291-aa99-5541b012a066">|<img width="500" src="https://github.com/thomasheckmann/zx81-external-16k/assets/14136378/36ffc1d7-7bf1-4760-bd7d-c64a76275ac7">|
 
 BOM for v1.1 (32K, continously from adress 16384)
 - LED 3mm
