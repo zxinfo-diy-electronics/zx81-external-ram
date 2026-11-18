@@ -4348,7 +4348,7 @@
 			(embedded_fonts no)
 		)
 	)
-	(text_box "ZX81 external 16Kb RAM in a very simple version.\n\nv1.1\n- R footprint a little bigger\n- M1not logic to control extra 16K RAM from 32K to 48K\n- Jumper to enable 32K - 32K to 48K\n- ROM disabled when accessing RAM 16-48K\n- Address logic for MREQ + (A14 or A15) -> CS\n- Added capacitor between PIN 20 and GND for WRX\n\nv1.0\n- Internal RAM always disabled by RAMCS high\n- WR -> WE (write enable)\n- RD -> OE(out enable)\n- MREQ + A14 -> CS\n"
+	(text_box "ZX81 external 16Kb RAM in a very simple version.\n\nv1.2\n- Added diode to prevent other interfaces to mess with ROMCS\n- Extra address logic to correct an error in mapping, which shows in some programs\n\nv1.1\n- R footprint a little bigger\n- M1not logic to control extra 16K RAM from 32K to 48K\n- Jumper to enable 32K - 32K to 48K\n- ROM disabled when accessing RAM 16-48K\n- Address logic for MREQ + (A14 or A15) -> CS\n- Added capacitor between PIN 20 and GND for WRX\n\nv1.0\n- Internal RAM always disabled by RAMCS high\n- WR -> WE (write enable)\n- RD -> OE(out enable)\n- MREQ + A14 -> CS\n"
 		(exclude_from_sim no)
 		(at 190.5 15.24 0)
 		(size 90.17 52.07)
@@ -4362,7 +4362,7 @@
 		)
 		(effects
 			(font
-				(size 1.8 1.8)
+				(size 1.4 1.4)
 			)
 			(justify left top)
 		)
@@ -4385,12 +4385,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "30d3190a-469a-4444-80c6-ec2c8892a419")
-	)
-	(junction
-		(at 209.55 114.3)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "4a01643f-1f53-40e5-af1b-c464400fffc2")
 	)
 	(junction
 		(at 255.27 88.9)
@@ -4417,6 +4411,12 @@
 		(uuid "624d1dec-58c6-48ca-8bce-a551f290644c")
 	)
 	(junction
+		(at 105.41 138.176)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "653ca4e5-9edb-4f1c-be64-6ce4fde7d09a")
+	)
+	(junction
 		(at 228.6 114.3)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4433,12 +4433,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "764ba638-a355-4aa9-ae12-793e316c45e0")
-	)
-	(junction
-		(at 191.77 102.87)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "7dcfc877-a40e-4e9f-8e1d-e3c85538610a")
 	)
 	(junction
 		(at 82.55 31.75)
@@ -4489,12 +4483,6 @@
 		(uuid "d57796eb-b709-4432-bff1-c7ce373b5ede")
 	)
 	(junction
-		(at 105.41 138.43)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d578e570-a043-4bd9-8f18-fa71062c3867")
-	)
-	(junction
 		(at 105.41 110.49)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4519,10 +4507,6 @@
 	(no_connect
 		(at 81.28 50.8)
 		(uuid "4493ce40-0b48-4916-af8e-2e611cdfd517")
-	)
-	(no_connect
-		(at 207.01 100.33)
-		(uuid "6a527425-2d96-4337-9fc2-c7366c84b755")
 	)
 	(no_connect
 		(at 48.26 86.36)
@@ -4864,23 +4848,13 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 97.79) (xy 191.77 102.87)
+			(xy 84.074 135.636) (xy 84.074 138.43)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "7839ff00-c12e-4bdc-bf0d-16f011c137d6")
-	)
-	(wire
-		(pts
-			(xy 191.77 102.87) (xy 191.77 114.3)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "78f079a9-2747-408e-ba22-d0fb13257939")
+		(uuid "78f06ed9-9120-41f5-ad32-e131be0061ae")
 	)
 	(wire
 		(pts
@@ -4901,6 +4875,16 @@
 			(type default)
 		)
 		(uuid "848c8519-b0a2-444e-9dde-004b74c627b9")
+	)
+	(wire
+		(pts
+			(xy 105.41 138.176) (xy 105.41 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "856e6add-cff3-483d-b623-f99b5614841d")
 	)
 	(wire
 		(pts
@@ -5124,16 +5108,6 @@
 	)
 	(wire
 		(pts
-			(xy 105.41 135.89) (xy 105.41 138.43)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d3fe8601-453c-47b1-a16f-7b58593d3a3f")
-	)
-	(wire
-		(pts
 			(xy 273.05 156.21) (xy 273.05 147.32)
 		)
 		(stroke
@@ -5174,7 +5148,7 @@
 	)
 	(wire
 		(pts
-			(xy 105.41 138.43) (xy 105.41 140.97)
+			(xy 105.41 135.89) (xy 105.41 138.176)
 		)
 		(stroke
 			(width 0)
@@ -5264,6 +5238,16 @@
 	)
 	(wire
 		(pts
+			(xy 90.17 135.636) (xy 84.074 135.636)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f43bb576-95b4-47c5-8b20-62703f6d6b1f")
+	)
+	(wire
+		(pts
 			(xy 86.36 121.92) (xy 86.36 124.46)
 		)
 		(stroke
@@ -5271,16 +5255,6 @@
 			(type default)
 		)
 		(uuid "f6a6f9ae-1db9-433b-ad08-5d71d5cc7f8e")
-	)
-	(wire
-		(pts
-			(xy 209.55 114.3) (xy 191.77 114.3)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f6af90dc-3420-433d-96c1-2fc6f54ed7a9")
 	)
 	(wire
 		(pts
@@ -5380,7 +5354,7 @@
 	)
 	(global_label "~{M1}"
 		(shape input)
-		(at 90.17 140.97 180)
+		(at 68.834 140.97 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5390,7 +5364,7 @@
 		)
 		(uuid "12b172ce-7112-4a80-8b11-8aef6c34a0c6")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 84.5239 140.97 0)
+			(at 63.1879 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5906,6 +5880,28 @@
 			)
 		)
 	)
+	(global_label "A14"
+		(shape input)
+		(at 90.17 140.716 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "90384dcd-198f-4257-b16c-048e355cbadb")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 83.6772 140.716 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "D6"
 		(shape input)
 		(at 151.13 62.23 0)
@@ -5996,7 +5992,7 @@
 	)
 	(global_label "A15"
 		(shape input)
-		(at 90.17 135.89 180)
+		(at 68.834 135.89 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6006,7 +6002,7 @@
 		)
 		(uuid "b1cacd0a-59f7-493d-9be3-844af1613314")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 83.6772 135.89 0)
+			(at 62.3412 135.89 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6878,16 +6874,15 @@
 	)
 	(symbol
 		(lib_id "74xx:74LS32")
-		(at 199.39 100.33 0)
+		(at 97.79 138.176 0)
 		(unit 2)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "4327843a-fb74-4f21-8cc6-0eff83d0ea87")
 		(property "Reference" "U3"
-			(at 199.39 91.44 0)
+			(at 97.79 129.286 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6895,7 +6890,7 @@
 			)
 		)
 		(property "Value" "74LS32"
-			(at 199.39 93.98 0)
+			(at 97.79 131.826 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6903,7 +6898,7 @@
 			)
 		)
 		(property "Footprint" "Package_DIP:DIP-14_W7.62mm"
-			(at 199.39 100.33 0)
+			(at 97.79 138.176 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6912,7 +6907,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.ti.com/lit/gpn/sn74LS32"
-			(at 199.39 100.33 0)
+			(at 97.79 138.176 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6921,7 +6916,7 @@
 			)
 		)
 		(property "Description" "Quad 2-input OR"
-			(at 199.39 100.33 0)
+			(at 97.79 138.176 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7130,7 +7125,7 @@
 	)
 	(symbol
 		(lib_id "74xx:74LS00")
-		(at 97.79 138.43 0)
+		(at 76.454 138.43 0)
 		(unit 3)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7138,7 +7133,7 @@
 		(dnp no)
 		(uuid "49371dd6-c0e4-431b-9792-7ec9ea33dff9")
 		(property "Reference" "U2"
-			(at 97.536 137.16 0)
+			(at 76.2 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7146,7 +7141,7 @@
 			)
 		)
 		(property "Value" "74LS00"
-			(at 97.536 139.7 0)
+			(at 76.2 139.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7154,7 +7149,7 @@
 			)
 		)
 		(property "Footprint" "Package_DIP:DIP-14_W7.62mm"
-			(at 97.79 138.43 0)
+			(at 76.454 138.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7163,7 +7158,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.ti.com/lit/gpn/sn74ls00"
-			(at 97.79 138.43 0)
+			(at 76.454 138.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7172,7 +7167,7 @@
 			)
 		)
 		(property "Description" "quad 2-input NAND gate"
-			(at 97.79 138.43 0)
+			(at 76.454 138.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
