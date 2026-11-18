@@ -21,7 +21,9 @@ And now it runs fine with the zx81-external-eprom interface as well.
 
 <img width="1080" alt="image" src="https://github.com/user-attachments/assets/e485ae72-63f8-45f1-9964-02381988574d" />
 
-BOM for v1.2 (ROMCS fix)
+The interface also mapped opcode fetches and ordinary reads to different RAM banks, upper-memory mapping is now corrected.
+
+BOM for v1.2
 - same as v1.1
 - Diode 1N4144 (or similar)
 
